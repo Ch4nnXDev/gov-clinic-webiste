@@ -24,29 +24,7 @@ export default function Services() {
       {/* Services Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-8">
         {/* Service Card */}
-        <div className="bg-white shadow-sm hover:shadow-md transition rounded-xl p-6 text-center">
-          <Ambulance className="w-14 h-14 text-blue-600 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold text-gray-800">Emergency Care</h3>
-          <p className="text-gray-600 mt-2">
-            24/7 emergency medical services for urgent and critical conditions.
-          </p>
-        </div>
-
-        <div className="bg-white shadow-sm hover:shadow-md transition rounded-xl p-6 text-center">
-          <Stethoscope className="w-14 h-14 text-green-600 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold text-gray-800">General Checkups</h3>
-          <p className="text-gray-600 mt-2">
-            Regular health checkups and preventive screenings for all citizens.
-          </p>
-        </div>
-
-        <div className="bg-white shadow-sm hover:shadow-md transition rounded-xl p-6 text-center">
-          <Syringe className="w-14 h-14 text-red-600 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold text-gray-800">Vaccination Programs</h3>
-          <p className="text-gray-600 mt-2">
-            Free immunization services for children, adults, and senior citizens.
-          </p>
-        </div>
+        
 
         <div className="bg-white shadow-sm hover:shadow-md transition rounded-xl p-6 text-center">
           <HeartPulse className="w-14 h-14 text-pink-600 mx-auto mb-4" />

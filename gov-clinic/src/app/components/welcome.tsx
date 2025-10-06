@@ -21,7 +21,7 @@ export default function Welcome() {
             and your family. Our experienced medical professionals ensure your
             well-being with care and expertise. Together, we work toward a healthier tomorrow.
           </p>
-          <Button className="w-80 border-2 border-blue-500 bg-white text-blue-500 rounded-4xl py-3 shadow-md hover:shadow-lg transition">
+          <Button className=" border-1 border-blue-600 text-blue-600 w-70 rounded-xl">
             Book an Appointment
           </Button>
         </div>
