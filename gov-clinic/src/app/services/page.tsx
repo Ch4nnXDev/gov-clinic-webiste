@@ -30,7 +30,7 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="relative w-full h-96 md:h-[500px]">
         <Image
-          src="/services-hero.jpeg"
+          src="/pills.jpeg"
           alt=""
 
           fill

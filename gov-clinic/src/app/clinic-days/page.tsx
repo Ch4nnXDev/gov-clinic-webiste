@@ -14,7 +14,7 @@ export default function ClinicDaysPage() {
       {/* Hero Section */}
       <section className="relative w-full h-80 md:h-[500px]">
         <Image
-          src="/clinic.jpeg"
+          src="/pills.jpeg"
           alt=""
           fill
           style={{ objectFit: "cover" }}
