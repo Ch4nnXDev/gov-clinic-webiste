@@ -1,10 +1,8 @@
 import { 
   Bell, 
   HeartPulse, 
-  Syringe, 
-  Stethoscope, 
   Users, 
-  Ambulance 
+
 } from "lucide-react";
 
 export default function Services() {
