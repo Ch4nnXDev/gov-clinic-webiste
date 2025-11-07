@@ -1,7 +1,15 @@
+'use client';
 import Image from 'next/image';
+
 import { Button } from "@/components/ui/button"
 
 export default function Welcome() {
+
+  function appointmentClick() {
+    
+    window.location.href="https://www.know4sure.lk"
+
+  }
   return (
     <section
       aria-labelledby="clinic-welcome-heading"
@@ -21,7 +29,7 @@ export default function Welcome() {
             and your family. Our experienced medical professionals ensure your
             well-being with care and expertise. Together, we work toward a healthier tomorrow.
           </p>
-          <Button className=" border-1 border-blue-600 text-blue-600 w-70 rounded-xl">
+          <Button onClick={appointmentClick} className=" border-1 border-blue-600 text-blue-600 w-70 rounded-xl hover:bg-blue-600 ">
             Book an Appointment
           </Button>
         </div>
@@ -48,7 +56,7 @@ export default function Welcome() {
           </div>
           <div className="relative w-full h-64 md:h-80 col-span-2 rounded-xl overflow-hidden shadow-lg -translate-y-4 md:-translate-y-8">
             <Image
-              src="/elder.jpeg"
+              src="/sign.jpg"
               alt="Elderly care support"
               fill
               style={{ objectFit: "cover" }}

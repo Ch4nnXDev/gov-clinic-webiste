@@ -18,12 +18,12 @@ export default function SwiperGallery() {
     },
     {
       img: "/child.jpeg",
-      title: "Pediatric & Family Care",
+      title: "Laborotory Services",
       subtitle: "Ensuring healthy growth and wellness for children and families."
     },
     {
       img: "/old.jpeg",
-      title: "Elderly Care Services",
+      title: "Training & Information Sessions",
       subtitle: "Tailored healthcare programs for senior citizens."
     }
   ];
