@@ -45,22 +45,6 @@ const articles = [
       "Healthy relationships grow through open communication. Understand consent, boundaries, and safe intimacy.",
     imageUrl: "/couples-health.jpg",
   },
-  {
-    title: "A Guide to Sexually Transmitted Infections (STIs)",
-    category: "Sexual Health",
-    readTime: "6 min read",
-    description:
-      "Learn common symptoms, prevention methods, and why regular screening matters even when you feel healthy.",
-    imageUrl: "/sti-guide.jpg",
-  },
-  {
-    title: "Support Services Available at Our Centre",
-    category: "Care Services",
-    readTime: "3 min read",
-    description:
-      "We provide counseling, testing, treatment, education, and confidential support programs for individuals and families.",
-    imageUrl: "/support-services.jpg",
-  },
 ];
 
   return (

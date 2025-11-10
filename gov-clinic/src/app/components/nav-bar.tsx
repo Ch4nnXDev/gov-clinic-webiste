@@ -23,7 +23,8 @@ export default function NavBar() {
   ];
 
   return (
-    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
+    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full sm:w-auto px-4">
+      
       
       {/* Desktop Nav */}
       <nav className="flex flex-row hidden sm:flex md:flex bg-white rounded-lg shadow px-4 py-2 w-max p-50">
@@ -54,13 +55,16 @@ export default function NavBar() {
         </NavigationMenu>
       </nav>
 
-      {/* Mobile Button */}
-      <button
-        className="md:hidden bg-white rounded-lg shadow px-3 py-2"
-        onClick={() => setOpen(!open)}
-      >
-        {open ? <X size={22} /> : <Menu size={22} />}
-      </button>
+      {/* Mobile Nav (logo + hamburger) */}
+      <div className="flex justify-between items-center md:hidden bg-white rounded-lg shadow px-4 py-2">
+        <div className="flex items-center">
+          <Image src="/Logo.png" alt="Clinic Logo" width={40} height={40} className="object-contain mr-2" />
+          <div className="text-lg font-bold text-gray-800">Sexual Health Centre Anuradhapura</div>
+        </div>
+        <button onClick={() => setOpen(!open)}>
+          {open ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </div>
 
       {/* Mobile Dropdown Menu */}
       {open && (
