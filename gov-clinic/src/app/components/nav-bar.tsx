@@ -59,7 +59,7 @@ export default function NavBar() {
       <div className="flex justify-between items-center md:hidden bg-white rounded-lg shadow px-4 py-2">
         <div className="flex items-center">
           <Image src="/Logo.png" alt="Clinic Logo" width={40} height={40} className="object-contain mr-2" />
-          <div className="text-lg font-bold text-gray-800">Sexual Health Centre Anuradhapura</div>
+          <div className="text-base font-bold text-gray-800">Sexual Health Centre Anuradhapura</div>
         </div>
         <button onClick={() => setOpen(!open)}>
           {open ? <X size={22} /> : <Menu size={22} />}
