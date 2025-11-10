@@ -2,7 +2,7 @@ import { Bell, HeartPulse, Users, CheckCircle } from "lucide-react";
 
 export default function Services() {
   return (
-    <section className="flex flex-col w-full rounded-lg py-16 px-6 lg:px-20 space-y-16 bg-white">
+    <section className="flex flex-col w-full rounded-lg py-20 px-6 lg:px-20 space-y-16 bg-white">
       {/* Title */}
       <div className="text-center max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-900 tracking-tight">Our Services</h1>

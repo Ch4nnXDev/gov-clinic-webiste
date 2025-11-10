@@ -18,7 +18,7 @@ export default function SwiperGallery() {
     },
     {
       img: "/child.jpeg",
-      title: "Laborotory Services",
+      title: "Laboratory Services",
       subtitle: "Ensuring healthy growth and wellness for children and families."
     },
     {
@@ -29,7 +29,7 @@ export default function SwiperGallery() {
   ];
 
   return (
-    <div className="w-full h-screen relative">
+    <div className="w-full h-[60vh] sm:h-[70vh] md:h-[85vh] lg:h-screen relative">
       <Swiper
         spaceBetween={0}
         effect="fade"
@@ -42,22 +42,22 @@ export default function SwiperGallery() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="relative w-full h-screen">
+            <div className="relative w-full h-full">
               {/* Background Image */}
               <Image
                 src={slide.img}
                 alt={slide.title}
                 fill
-                style={{ objectFit: "cover" }}
+                className="object-cover"
                 priority={index === 0}
               />
 
-              {/* Overlay with subtle gradient for modern look */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40 flex flex-col items-center justify-center text-center px-6">
-                <h2 className="text-white text-3xl md:text-5xl font-bold drop-shadow-lg">
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center px-4 sm:px-8">
+                <h2 className="text-white text-2xl sm:text-3xl md:text-5xl font-bold leading-snug drop-shadow-lg">
                   {slide.title}
                 </h2>
-                <p className="mt-4 text-white text-lg md:text-2xl drop-shadow-md max-w-2xl">
+                <p className="mt-3 text-white text-sm sm:text-base md:text-xl max-w-2xl drop-shadow-md">
                   {slide.subtitle}
                 </p>
               </div>

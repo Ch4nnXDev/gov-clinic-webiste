@@ -1,7 +1,7 @@
 import SwiperGallery from "./components/SwiperGallery";
 import Welcome from "./components/welcome";
 import Services from "./components/services";
-import Newsletter from "./components/newsletter";
+import Blog from "../components/blog";
 import Why from "./components/why";
 
 
@@ -15,7 +15,7 @@ export default function Home() {
       <Services />
       <Why />
 
-      <Newsletter />
+      <Blog />
     </div>
       
       
