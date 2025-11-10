@@ -26,7 +26,7 @@ export default function NavBar() {
     <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
       
       {/* Desktop Nav */}
-      <nav className="flex flex-row hidden md:flex bg-white rounded-lg shadow px-4 py-2 w-max p-50">
+      <nav className="flex flex-row hidden sm:flex md:flex bg-white rounded-lg shadow px-4 py-2 w-max p-50">
         <div className="flex flex-row items-center mr-10">
           <Image
             src="/Logo.png"

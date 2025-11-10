@@ -9,7 +9,7 @@ export default function Why() {
        <div className="h-full">
        
         <Image
-          src="/heart.jpg"
+          src="/labb.jpeg"
           alt="Clinic Logo"
           width={500}
           height={100}
@@ -42,7 +42,7 @@ export default function Why() {
             Patient-Centered Approach
           </li>
         </ul>
-        
+
       </div>
       <div>
         

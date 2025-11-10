@@ -9,12 +9,65 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 const Blog = () => {
+const articles = [
+  {
+    title: "Understanding HIV: Myths vs Facts",
+    category: "HIV Awareness",
+    readTime: "6 min read",
+    description:
+      "Many misunderstandings surround HIV. Learn what is true, what is outdated, and how modern treatment supports long, healthy lives.",
+    imageUrl: "/hiv-awareness.jpg",
+  },
+  {
+    title: "How to Access Free HIV Testing in Sri Lanka",
+    category: "Community Health",
+    readTime: "4 min read",
+    description:
+      "Testing is confidential and widely accessible. Know where to go, what to expect, and how your privacy is protected.",
+    imageUrl: "/clinic-testing.jpg",
+  },
+  {
+    title: "What to Know About PrEP and PEP",
+    category: "Prevention",
+    readTime: "5 min read",
+    description:
+      "PrEP and PEP are highly effective HIV prevention medications. Learn who can use them, how they work, and where to receive them.",
+    imageUrl: "/prep-pep.jpg",
+  },
+  {
+    title: "Sexual Health for Couples: Building Trust and Communication",
+    category: "Relationships",
+    readTime: "7 min read",
+    description:
+      "Healthy relationships grow through open communication. Understand consent, boundaries, and safe intimacy.",
+    imageUrl: "/couples-health.jpg",
+  },
+  {
+    title: "A Guide to Sexually Transmitted Infections (STIs)",
+    category: "Sexual Health",
+    readTime: "6 min read",
+    description:
+      "Learn common symptoms, prevention methods, and why regular screening matters even when you feel healthy.",
+    imageUrl: "/sti-guide.jpg",
+  },
+  {
+    title: "Support Services Available at Our Centre",
+    category: "Care Services",
+    readTime: "3 min read",
+    description:
+      "We provide counseling, testing, treatment, education, and confidential support programs for individuals and families.",
+    imageUrl: "/support-services.jpg",
+  },
+];
+
   return (
     <div className="max-w-(--breakpoint-xl) mx-auto py-16 px-6 xl:px-0">
       <div className="flex items-end justify-between">
         <h2 className="text-3xl font-bold tracking-tight">Health Updates and News</h2>
+
         <Select defaultValue="recommended">
           <SelectTrigger className="w-[180px]">
             <SelectValue />
@@ -28,27 +81,34 @@ const Blog = () => {
       </div>
 
       <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {[0, 1, 2, 3, 4].map((i) => (
+        {articles.map((article, i) => (
           <Card key={i} className="shadow-none overflow-hidden rounded-md py-0">
             <CardHeader className="p-0">
-              <div className="aspect-video bg-muted w-full border-b" />
+              <Image
+                src={article.imageUrl}
+                alt={article.title}
+                width={400}
+                height={200}
+                className="aspect-video w-full object-cover"
+              />
             </CardHeader>
+
             <CardContent className="pb-6">
               <div className="flex items-center gap-3">
                 <Badge className="bg-primary/5 text-primary hover:bg-primary/5 shadow-none">
-                  Technology
+                  {article.category}
                 </Badge>
                 <span className="font-medium text-xs text-muted-foreground">
-                  5 min read
+                  {article.readTime}
                 </span>
               </div>
 
               <h3 className="mt-4 text-[1.35rem] font-semibold tracking-tight">
-                A beginner&apos;s guide to blackchain for engineers
+                {article.title}
               </h3>
+
               <p className="mt-2 text-muted-foreground">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse varius enim in eros.
+                {article.description}
               </p>
 
               <Button size="sm" className="mt-6 shadow-none">
