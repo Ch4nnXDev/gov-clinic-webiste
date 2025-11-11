@@ -2,7 +2,7 @@ import { ShieldCheck, Users, Lock, Building2, Smile } from "lucide-react";
 import Image from 'next/image';
 export default function Why() {
   return (
-    <section className="flex flex-row bg-white w-full items-center justify-center h-screen py-15">
+    <section className="flex flex-col bg-white w-full items-center justify-center h-screen py-15 md:flex-row">
       
       <div className="flex flex-col w-1/2 p-1 items-center h-full">
        
