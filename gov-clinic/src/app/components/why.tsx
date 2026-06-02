@@ -1,5 +1,8 @@
+"use client";
 import { ShieldCheck, Users, Lock, Building2, Smile } from "lucide-react";
+import CountUp from 'react-countup';
 import Image from 'next/image';
+
 export default function Why() {
   return (
     <section className="flex flex-col bg-white w-full items-center justify-center h-screen py-15 md:flex-row">
@@ -44,10 +47,19 @@ export default function Why() {
           </ul>
 
         </div>
-        <div className="flex flex-row  mt-10 mr-30 p-2 justify-center items-center text-black font-xl gap-4">
-          <div className="flex flex-col bg-blue-200  p-20"></div>
-          <div className="flex flex-col bg-red-200  p-20"></div>
-          <div className="flex flex-col bg-green-200 p-20"></div>
+        <div className="flex flex-row  mt-10 mr-50 p-2 justify-center items-center text-black font-xl gap-3">
+          <div className="flex flex-col p-10">
+            <CountUp end={100} duration={6} prefix="+" className="text-4xl font-bold" />
+            <span className="text-lg mt-5">Dedicated Professionals</span>
+          </div>
+          <div className="flex flex-col p-10">
+            <CountUp end={1000} duration={6} prefix="+" className="text-4xl font-bold" />
+            <span className="text-lg mt-5">Happy Patients</span>
+          </div>
+          <div className="flex flex-col p-10">
+            <CountUp end={500} duration={6} prefix="+" className="text-4xl font-bold" />
+            <span className="text-lg mt-5">Satisfied Patients</span>
+          </div>
         </div>
       <div>
         
