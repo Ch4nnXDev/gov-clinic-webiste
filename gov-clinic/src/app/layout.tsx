@@ -1,8 +1,7 @@
 
-import "./globals.css";
 import NavBar from "./components/nav-bar";
 import Footer from "./components/footer";
-
+import "./globals.css";
 
 export const metadata = {
   title: "Sexual Health Centre - Anuradhapura",
