@@ -11,7 +11,7 @@ export default function Welcome() {
   return (
     <section
       aria-labelledby="clinic-welcome-heading"
-      className="relative w-full py-16 px-4 md:px-16"
+      className="relative w-full py-16 px-4 md:px-16 font-serif"
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-14">
 
@@ -21,7 +21,7 @@ export default function Welcome() {
             id="clinic-welcome-heading"
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
           >
-            Welcome to Anuradhapura HIV Clinic
+            Welcome to Anuradhapura <br></br> HIV Clinic
           </h1>
 
           <p className="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed">

@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function Why() {
   return (
-    <section className="flex flex-col bg-white w-full items-center justify-center h-screen py-15 md:flex-row">
+    <section className="flex flex-col bg-white w-full items-center justify-center h-screen py-15 md:flex-row font-serif">
       
       <div className="flex flex-col w-1/2 p-1 items-center h-full">
        
@@ -47,18 +47,18 @@ export default function Why() {
           </ul>
 
         </div>
-        <div className="flex flex-row  mt-10 mr-50 p-2 justify-center items-center text-black font-xl gap-3">
+        <div className="flex flex-row  mt-20 mr-50 p-2 justify-center items-center text-black font-xl gap-3">
           <div className="flex flex-col p-10 justify-center items-center">
             <CountUp end={100} duration={6} prefix="+" className="text-4xl font-bold" />
-            <span className="text-lg mt-5">Dedicated Professionals</span>
+            <span className="text-xl mt-5 ml-10">Dedicated Professionals</span>
           </div>
           <div className="flex flex-col p-10 justify-center items-center">
             <CountUp end={1000} duration={6} prefix="+" className="text-4xl font-bold" />
-            <span className="text-lg mt-5">Happy Patients</span>
+            <span className="text-xl mt-5 ml-5">Tests Done</span>
           </div>
           <div className="flex flex-col p-10 justify-center items-center">
-            <CountUp end={500} duration={6} prefix="+" className="text-4xl font-bold" />
-            <span className="text-lg mt-5">Satisfied Patients</span>
+            <CountUp end={5000} duration={6} prefix="+" className="text-4xl font-bold" />
+            <span className="text-xl mt-5">Satisfied Patients</span>
           </div>
         </div>
       <div>
