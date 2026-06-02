@@ -1,15 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-interface Article {
-  _id: string;
-  title: string;
-  content: string;
-  author: string;
-}
+
 
 export default function KnowledgeCenterPage() {
   const articles = [
@@ -20,9 +14,6 @@ export default function KnowledgeCenterPage() {
     { title: "Preventive Care", content: "Guidelines on staying healthy and preventing infections." },
   ];
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [articless, setArticles] = useState<Article[]>([]);
-  const [expandedItems, setExpandedItems] = useState<{ [key: number]: boolean }>({});
 
 
 
@@ -77,14 +68,13 @@ export default function KnowledgeCenterPage() {
                 className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition flex flex-col justify-between"
               >
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{article.title}</h3>
-                <p className={`text-gray-600 ${expandedItems[index] ? "line-clamp-none" : "line-clamp-3"}`}>
+                <p className={`text-gray-600 `}>
                   {article.content}
                 </p>
                 <button
                   
                   className="mt-4 self-start bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition"
                 >
-                  {expandedItems[index] ? "Collapse" : "Read More"}
                 </button>
               </motion.div>
             ))}

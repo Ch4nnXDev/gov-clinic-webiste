@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   Phone,
   Mail,
@@ -37,24 +38,24 @@ export default function Footer() {
 
             <ul className="space-y-3 text-sm text-slate-600">
               <li>
-                <a href="/" className="hover:text-sky-600 transition">
+                <Link href="/" className="hover:text-sky-600 transition">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services" className="hover:text-sky-600 transition">
+                <Link href="/services" className="hover:text-sky-600 transition">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/appointments" className="hover:text-sky-600 transition">
+                <Link href="/appointments" className="hover:text-sky-600 transition">
                   Appointments
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="hover:text-sky-600 transition">
+                <Link href="/contact" className="hover:text-sky-600 transition">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
