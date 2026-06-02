@@ -1,5 +1,5 @@
 
-import "./globals.css"
+import "./globals.css";
 import NavBar from "./components/nav-bar";
 import Footer from "./components/footer";
 
