@@ -5,8 +5,6 @@ import {
   MapPin,
   Globe,
   Facebook,
-  Instagram,
-  Linkedin,
   Award,
 } from "lucide-react";
 
@@ -133,20 +131,6 @@ export default function Footer() {
                 className="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center text-sky-700 hover:bg-sky-600 hover:text-white transition"
               >
                 <Facebook size={18} />
-              </a>
-
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center text-sky-700 hover:bg-sky-600 hover:text-white transition"
-              >
-                <Instagram size={18} />
-              </a>
-
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center text-sky-700 hover:bg-sky-600 hover:text-white transition"
-              >
-                <Linkedin size={18} />
               </a>
             </div>
           </div>
