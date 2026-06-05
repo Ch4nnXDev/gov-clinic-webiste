@@ -1,35 +1,14 @@
 'use client';
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import axios from "axios";
 import { Scrollbar, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css';
-import 'swiper/css/scrollbar';
-import 'swiper/css/navigation';
+
 
 export default function Newsletter() {
-  const articles = [
-    {
-      img: "/pills.jpeg",
-      title: "Essential Medicines & Public Access",
-      desc: "Learn how the government ensures affordable access to life-saving medicines.",
-    },
-    {
-      img: "/vaccination.jpeg",
-      title: "National Immunization Drive",
-      desc: "Latest updates on vaccination programs protecting citizens across the country.",
-    },
-    {
-      img: "/mentalhealth.jpeg",
-      title: "Mental Health & Wellbeing",
-      desc: "Government initiatives to support mental health awareness and services.",
-    },
-    {
-      img: "/community.jpeg",
-      title: "Community Health Programs",
-      desc: "Discover how outreach programs are improving healthcare in rural areas.",
-    },
-  ];
-
+  const [articles, setArticles] = useState([]);
+  
   return (
     <section className="flex flex-col min-h-screen p-18">
       {/* Heading */}
