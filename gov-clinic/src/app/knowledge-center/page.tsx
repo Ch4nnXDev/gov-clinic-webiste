@@ -1,18 +1,22 @@
 "use client";
-
+import { useGetArticles } from "@/hooks/getArticles";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 
 
 export default function KnowledgeCenterPage() {
-  const articles = [
-    { title: "Understanding HIV", content: "An overview of HIV, its transmission, and prevention." },
-    { title: "Living with HIV", content: "Tips and resources for managing life with HIV." },
-    { title: "HIV Treatment Options", content: "Information on available treatments and medications." },
-    { title: "Support Resources", content: "Where to find support groups and counseling services." },
-    { title: "Preventive Care", content: "Guidelines on staying healthy and preventing infections." },
-  ];
+  const { data } = useGetArticles();
+
+  type Article = {
+  id: number;
+  title: string;
+  content: string;
+  author: string;
+  readTime: number;
+
+};
+
 
 
 
@@ -60,9 +64,9 @@ export default function KnowledgeCenterPage() {
         <div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((article, index) => (
+            {data?.articles?.map((article: Article) => (
               <motion.div
-                key={index}
+                key={article.id}
                 layout
                 initial="collapsed"
                 className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition flex flex-col justify-between"
