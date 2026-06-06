@@ -5,9 +5,18 @@ import Image from "next/image";
 import { Scrollbar, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+type Article = {
+  id: number;
+  title: string;
+  content: string;
+  author: string;
+  readTime: number;
+
+};
 
 
 export default function Newsletter() {
+  
   const { data } = useGetArticles();
   
   return (
@@ -35,12 +44,12 @@ export default function Newsletter() {
           }}
           modules={[Scrollbar, Navigation]}
         >
-          {data?.articles?.map((article) => (
+          {data?.articles?.map((article: Article) => (
             <SwiperSlide key={article.id}>
               <div className="bg-white rounded-xl shadow hover:shadow-md transition p-4">
                 <div className="relative w-full h-48">
                   <Image
-                    src={article.img}
+                    src=""
                     alt={article.title}
                     fill
                     className="object-cover rounded-lg"
