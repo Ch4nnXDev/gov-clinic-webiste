@@ -1,5 +1,5 @@
 'use client';
-import useGetArticles from "@/hooks/getArticles";
+import {useGetArticles} from "@/hooks/getArticles";
 import Image from "next/image";
 
 import { Scrollbar, Navigation } from "swiper/modules";
