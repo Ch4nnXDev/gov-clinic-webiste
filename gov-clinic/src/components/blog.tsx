@@ -1,5 +1,5 @@
 "use client";
-import { Badge } from "./ui/badge";
+
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import {
@@ -14,7 +14,7 @@ import {useGetArticles} from "@/hooks/getArticles";
 import Image from "next/image";
 
 const Blog = () => {
-const {data, isLoading, error} = useGetArticles();
+const {data} = useGetArticles();
 
 
   return (
