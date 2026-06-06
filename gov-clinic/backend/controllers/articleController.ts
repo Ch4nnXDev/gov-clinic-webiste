@@ -14,9 +14,9 @@ export const getArticleByIdController = async (req: express.Request, res: expres
 }
 
 export const getAllArticlesController = async (req: express.Request, res: express.Response) => {
-    const users = await getAllArticles();
-    if (users) {
-        res.status(200).json({users, message: "Articles Found Successfully"});
+    const articles = await getAllArticles();
+    if (articles) {
+        res.status(200).json({articles, message: "Articles Found Successfully"});
 
     } else {
         res.status(500).json({message: "Articles Not Found"});
