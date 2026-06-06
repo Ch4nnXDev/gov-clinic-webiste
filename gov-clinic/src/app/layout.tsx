@@ -3,7 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import NavBar from "./components/nav-bar";
 import Footer from "./components/footer";
 import "./globals.css";
-
+import QueryProvider from "../providers/QueryProvider";
 export const metadata = {
   title: "Sexual Health Centre - Anuradhapura",
   description: "Providing confidential and supportive sexual health services in Anuradhapura.",
@@ -26,7 +26,9 @@ export default function RootLayout({
 
         <NavBar />
         <main>
+        <QueryProvider>
         {children}
+        </QueryProvider>
         
 
         </main>         
