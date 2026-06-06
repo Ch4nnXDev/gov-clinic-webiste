@@ -35,7 +35,7 @@ const {data, isLoading, error} = useGetArticles();
       </div>
 
       <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {data?.articles?.map((article) => (
+        {data?.articles?.map((article) => ( //optional chaining is aded with the question mark thun it check if the 1st oayer of the obhject exist ir itsa has articles and them go otherwuse it could crash
           <Card key={article.id} className="shadow-none overflow-hidden rounded-md py-0">
             <CardHeader className="p-0">
               <Image
