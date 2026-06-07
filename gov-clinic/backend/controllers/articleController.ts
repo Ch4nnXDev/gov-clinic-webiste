@@ -1,5 +1,5 @@
 import express from 'express';
-import { createArticle, getAllArticles, getArticleById, updateArticle } from '../services/articleService';
+import { createArticle, getAllArticles, getArticleById, updateArticle } from '../services/articleService.js';
 
 export const getArticleByIdController = async (req: express.Request, res: express.Response) => {
     const { id } = req.params;
