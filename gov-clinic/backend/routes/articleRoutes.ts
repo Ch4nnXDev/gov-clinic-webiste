@@ -1,5 +1,5 @@
 import express from "express";
-import { getArticleByIdController, getAllArticlesController, createArticleCOntroller, updateArticleController } from "../controllers/articleController";
+import { getArticleByIdController, getAllArticlesController, createArticleCOntroller, updateArticleController } from "../controllers/articleController.js";
 
 const router = express.Router();
 

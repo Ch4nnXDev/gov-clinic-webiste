@@ -2,7 +2,7 @@ import express from 'express';
 import { createArticle, getAllArticles, getArticleById, updateArticle } from '../services/articleService.js';
 
 export const getArticleByIdController = async (req: express.Request, res: express.Response) => {
-    const { id } = req.params;
+    const id  = req.params.id as string;
     const user = await getArticleById(parseInt(id));
     if (user) {
         res.status(200).json({user, message: "Article Found Successfully"});
@@ -34,7 +34,7 @@ export const createArticleCOntroller = async (req: express.Request, res: express
 }
 
 export const updateArticleController = async (req: express.Request, res: express.Response) => {
-    const { id } = req.params;
+    const id  = req.params.id as string;
     const user = await updateArticle(parseInt(id), req.body.title, req.body.content, req.body.author, req.body.readTime);
     if (user) {
         res.status(200).json({user, message: "Article Updated Successfully"});
