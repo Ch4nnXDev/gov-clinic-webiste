@@ -77,7 +77,7 @@ export default function KnowledgeCenterPage() {
                 </p>
                 <button
                   
-                  className="mt-4 self-start bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition"
+                  className="mt-3 self-start bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition"
                 >
                 </button>
               </motion.div>
