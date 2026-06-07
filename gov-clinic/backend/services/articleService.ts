@@ -20,12 +20,12 @@ export const createArticle = async (title: string, content: string, author: stri
             title,
             content,
             author,
-            readTime
+            readtime: readTime
         }
     });
 }
 
-export const updateArticle = async (id: number, title?: string, content?: string, author?: string, readTime?: string) => {
+export const updateArticle = async (id: number, title: string, content: string, author: string, readTime: string) => {
     return prisma.article.update({
         where: {
             id
@@ -34,7 +34,7 @@ export const updateArticle = async (id: number, title?: string, content?: string
             title,
             content,
             author,
-            readTime
+            readtime: readTime
         }
     });
 }
