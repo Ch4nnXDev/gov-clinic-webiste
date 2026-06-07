@@ -14,7 +14,7 @@ export const getAllArticles = async () => {
     return prisma.article.findMany();
 }
 
-export const createArticle = async (title: string, content: string, author: string, readTime: number) => {
+export const createArticle = async (title: string, content: string, author: string, readTime: string) => {
     return prisma.article.create({
         data: {
             title,
@@ -25,7 +25,7 @@ export const createArticle = async (title: string, content: string, author: stri
     });
 }
 
-export const updateArticle = async (id: number, title?: string, content?: string, author?: string, readTime?: number) => {
+export const updateArticle = async (id: number, title?: string, content?: string, author?: string, readTime?: string) => {
     return prisma.article.update({
         where: {
             id

@@ -10,7 +10,7 @@ type Article = {
   title: string;
   content: string;
   author: string;
-  readTime: number;
+  readTime: string;
 
 };
 
