@@ -69,7 +69,7 @@ export default function KnowledgeCenterPage() {
                 key={article.id}
                 layout
                 initial="collapsed"
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition flex flex-col justify-between"
+                className="bg-white p-10 rounded-xl shadow-md hover:shadow-lg transition flex flex-col justify-between"
               >
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{article.title}</h3>
                 <p className={`text-gray-600 `}>
