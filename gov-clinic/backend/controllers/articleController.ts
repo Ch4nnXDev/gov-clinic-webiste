@@ -23,7 +23,7 @@ export const getAllArticlesController = async (req: express.Request, res: expres
     }
 }
 
-export const createArticleCOntroller = async (req: express.Request, res: express.Response) => {
+export const createArticleController = async (req: express.Request, res: express.Response) => {
     const user = await createArticle(req.body.title, req.body.content, req.body.author, req.body.readTime);
     if (user) {
         res.status(200).json({user, message: "Article Created Successfully"});
@@ -43,3 +43,4 @@ export const updateArticleController = async (req: express.Request, res: express
         res.status(500).json({message: "Article Update Failed"});
     }
 }
+
