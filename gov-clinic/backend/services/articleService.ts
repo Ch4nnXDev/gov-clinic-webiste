@@ -39,7 +39,7 @@ export const updateArticle = async (id: number, title: string, content: string, 
     });
 }
 
-export const deleteArticle = async (id: number) => {
+export const deleteArticleById = async (id: number) => {
     return prisma.article.delete({
         where: {
             id
@@ -48,5 +48,5 @@ export const deleteArticle = async (id: number) => {
 }       
 
 export const deleteAllArticles = async () => {
-    return prisma.article.deleteMany({});
+    return prisma.article.deleteMany();
 }
