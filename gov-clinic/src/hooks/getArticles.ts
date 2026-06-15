@@ -1,4 +1,4 @@
-import { getAllArticles, createArticle } from "../services/articleService";
+import { getAllArticles, createArticle, deleteAllArticles } from "../services/articleService";
 import { useMutation, useQuery } from "@tanstack/react-query";
 
 export function useGetArticles() {
@@ -12,4 +12,12 @@ export function useCreateArticles() {
     return useMutation({
        mutationFn: createArticle
 })
+};
+
+export function useDeleteAllArticles() {
+    return useMutation({
+        mutationFn: deleteAllArticles
+        
+        
+    })
 };
