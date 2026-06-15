@@ -20,3 +20,8 @@ export const createArticle = async (data: Article) => {
     return user;
     
 }
+
+export const deleteAllArticles = async () => {
+    const deletedCount = await axios.delete(`${API_URL}/api/articles/delete`);
+    return deletedCount.data;
+}
