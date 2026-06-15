@@ -46,3 +46,7 @@ export const deleteArticle = async (id: number) => {
         }
     });
 }       
+
+export const deleteAllArticles = async () => {
+    return prisma.article.deleteMany({});
+}
