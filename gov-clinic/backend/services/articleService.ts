@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 export const getArticleById = async (id: number) => {
     return prisma.article.findUnique({
         where: {
-            id
+            id: id
         }
     });
 }
@@ -28,7 +28,7 @@ export const createArticle = async (title: string, content: string, author: stri
 export const updateArticle = async (id: number, title: string, content: string, author: string, readTime: string) => {
     return prisma.article.update({
         where: {
-            id
+            id: id
         },
         data: {
             title,
@@ -42,7 +42,7 @@ export const updateArticle = async (id: number, title: string, content: string, 
 export const deleteArticleById = async (id: number) => {
     return prisma.article.delete({
         where: {
-            id
+            id: id
         }
     });
 }       
