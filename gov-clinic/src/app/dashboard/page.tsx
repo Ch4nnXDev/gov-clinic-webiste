@@ -1,0 +1,6 @@
+import Link from "next/link";
+import { FilePlus2, ShieldAlert } from "lucide-react";
+
+export default function DashboardPage() {
+  return <main className="px-6 pb-16 pt-32"><section className="mx-auto max-w-4xl"><p className="eyebrow">Content management</p><h1 className="section-title">Knowledge centre dashboard</h1><p className="mt-4 max-w-2xl text-slate-600">Create and manage the resources shown to visitors. Keep content accurate, clear and respectful.</p><div className="mt-10 grid gap-5 sm:grid-cols-2"><Link href="/articles" className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-md"><FilePlus2 className="h-8 w-8 text-sky-700" /><h2 className="mt-5 text-xl font-bold">Create article</h2><p className="mt-2 text-sm leading-6 text-slate-600">Publish a new health article or community update.</p></Link><Link href="/admin" className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-red-100 transition hover:-translate-y-1 hover:shadow-md"><ShieldAlert className="h-8 w-8 text-red-600" /><h2 className="mt-5 text-xl font-bold">Article administration</h2><p className="mt-2 text-sm leading-6 text-slate-600">Access high-impact article maintenance actions.</p></Link></div></section></main>;
+}

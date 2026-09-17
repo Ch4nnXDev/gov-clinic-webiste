@@ -1,29 +1,25 @@
 "use client";
 import { ShieldCheck, Users, Lock, Building2, Smile } from "lucide-react";
-import CountUp from 'react-countup';
 import Image from 'next/image';
 
 export default function Why() {
   return (
-    <section className="flex flex-col bg-white w-full items-center justify-center h-screen py-15 md:flex-row font-serif">
+    <section className="bg-white py-16 sm:py-24">
+      <div className="mx-auto grid max-w-6xl items-center gap-30 px-6 lg:grid-cols-2">
       
-      <div className="flex flex-col w-1/2 p-1 items-center h-full">
-       
-       <div className="h-full">
-       
+      <div className="order-2 lg:order-1">
         <Image
           src="/labb.jpeg"
           alt="laboratory inspection"
-          width={500}
-          height={100}
-          className="object-contain border-2 rounded-xl"
+          width={800}
+          height={600}
+          className="h-auto w-full rounded-2xl object-cover shadow-lg"
         />
       </div>
-      </div>
-      <div className="flex flex-col w-1/2 p-10 h-full">
+      <div className="order-1 lg:order-2">
         <div>
-          <h2 className="text-black text-3xl font-bold mb-6 animate-bounce">Your Health, Our Priority</h2>
-          <ul className="space-y-4 text-black">
+          <p className="eyebrow">Why choose us</p><h2 className="section-title">Your health, our priority</h2>
+          <p className="mt-4 text-sm leading-6 text-slate-600">HIV is a manageable long-term health condition with early diagnosis, consistent treatment and appropriate support. Our team provides care without stigma or judgement.</p><ul className="mt-7 space-y-4 text-slate-700">
             <li className="flex items-center">
               <ShieldCheck className="mr-3" />
               Experienced Medical Professionals
@@ -47,26 +43,9 @@ export default function Why() {
           </ul>
 
         </div>
-        <div className="flex flex-row  mt-20 mr-50 p-2 justify-center items-center text-black font-xl gap-3">
-          <div className="flex flex-col p-10 justify-center items-center">
-            <CountUp end={100} duration={6} prefix="+" className="text-4xl font-bold" />
-            <span className="text-xl mt-5 ml-10">Dedicated Professionals</span>
-          </div>
-          <div className="flex flex-col p-10 justify-center items-center">
-            <CountUp end={1000} duration={6} prefix="+" className="text-4xl font-bold" />
-            <span className="text-xl mt-5 ml-5">Tests Done</span>
-          </div>
-          <div className="flex flex-col p-10 justify-center items-center">
-            <CountUp end={5000} duration={6} prefix="+" className="text-4xl font-bold" />
-            <span className="text-xl mt-5">Satisfied Patients</span>
-          </div>
-        </div>
-      <div>
-        
-      </div>
-      
-      </div>
 
+      </div>
+      </div>
     </section>
   );
     

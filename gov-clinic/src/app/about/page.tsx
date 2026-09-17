@@ -1,10 +1,11 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function AboutPage() {
   return (
-    <main className="w-full min-h-screen bg-gray-50">
+    <main className="bg-slate-50">
       {/* Header Section with Image */}
-      <section className="relative w-full h-[24rem] md:h-[32rem] lg:h-[40rem]">
+      <section className="relative h-80 w-full sm:h-[28rem]">
         <Image
           src="/steth.jpeg"
           alt="About Us"
@@ -14,16 +15,15 @@ export default function AboutPage() {
           priority
         />
         {/* Overlay Text */}
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white text-center drop-shadow-lg">
+        <div className="absolute inset-0 flex items-center justify-center bg-slate-950/55 pt-16"><div className="text-center"><p className="eyebrow text-teal-200">Our promise</p><h1 className="display text-4xl font-bold text-white drop-shadow-lg sm:text-5xl">
             About Us
-          </h1>
+          </h1></div>
         </div>
       </section>
 
       {/* Content Section */}
-      <section className="max-w-6xl mx-auto px-6 md:px-0 mt-16">
-        <div className="bg-white rounded-xl shadow-lg p-8 md:p-12 space-y-6">
+      <section className="mx-auto max-w-5xl px-6 py-16 sm:py-20"><div className="grid gap-8 rounded-2xl bg-white p-7 shadow-sm ring-1 ring-slate-200 md:grid-cols-[1fr_.8fr] md:p-12">
+        <div className="space-y-6">
           <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
             Welcome to the Anuradhapura HIV Clinic. We are dedicated to providing
             comprehensive care and support for individuals living with HIV.
@@ -38,12 +38,8 @@ export default function AboutPage() {
             top priorities.
           </p>
 
-          {/* Optional Call-to-Action */}
-          <div className="mt-6">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-8 py-3 shadow-md hover:shadow-lg transition">
-              Learn More About Our Programs
-            </button>
-          </div>
+          <Link href="/services" className="inline-block rounded-xl bg-teal-700 px-6 py-3 font-semibold text-white transition hover:bg-teal-800">Discover our services</Link></div>
+          <aside className="rounded-2xl bg-teal-50 p-6"><h2 className="text-xl font-bold text-slate-900">What guides us</h2><ul className="mt-5 space-y-4 text-sm leading-6 text-slate-700"><li><strong className="block text-teal-800">Privacy</strong>Your information and your story are treated with care.</li><li><strong className="block text-teal-800">Respect</strong>Everyone deserves dignified, judgement-free care.</li><li><strong className="block text-teal-800">Partnership</strong>We work with people and communities for better health.</li></ul></aside>
         </div>
       </section>
     </main>

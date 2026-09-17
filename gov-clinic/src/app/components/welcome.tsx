@@ -1,48 +1,46 @@
 'use client';
 import Image from 'next/image';
-import { Button } from "@/components/ui/button";
 
 export default function Welcome() {
-
-  function appointmentClick() {
-    window.location.href = "https://www.know4sure.lk";
-  }
 
   return (
     <section
       aria-labelledby="clinic-welcome-heading"
-      className="relative w-full py-16 px-4 md:px-16 font-serif"
+      className="relative w-full py-16 px-6 sm:py-24"
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-14">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 lg:flex-row lg:gap-16">
 
         {/* Text Section */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center space-y-6 text-center md:text-left">
+        <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
+          <p className="eyebrow">Sexual health services</p>
           <h1
             id="clinic-welcome-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
+            className="display text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
           >
-            Welcome to Anuradhapura <br></br> HIV Clinic
+            Confidential care and support, close to home
           </h1>
 
-          <p className="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed">
-            We are committed to providing high-quality healthcare services for you
-            and your family. Our experienced medical professionals ensure your
-            well-being with care and expertise. Together, we work toward a healthier tomorrow.
+          <p className="text-base leading-7 text-slate-600 sm:text-lg">
+            The Anuradhapura Sexual Health Centre provides confidential clinical care, evidence-based information and respectful support for individuals and families.
           </p>
 
           <div className="flex justify-center md:justify-start">
-            <Button
-              onClick={appointmentClick}
-              className="border border-blue-600 text-blue-600 rounded-xl px-6 py-3 hover:bg-blue-600 hover:text-white transition-all"
-            >
-              Book an Appointment
-            </Button>
+            <a href="https://www.know4sure.lk" target="_blank" rel="noreferrer" className="rounded-xl bg-red-700 px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-red-800">Plan your visit</a>
           </div>
         </div>
 
         {/* Image Grid */}
-        <div className="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="relative w-full h-56 sm:h-64 rounded-xl overflow-hidden shadow-lg">
+        <div className="grid w-full grid-cols-2 gap-3 sm:gap-4 lg:w-1/2">
+          <div className="relative col-span-2 h-52 overflow-hidden rounded-2xl shadow-lg sm:h-64">
+            <Image
+              src="/doctor.jpeg"
+              alt="Doctor providing care"
+              fill
+              className="object-cover transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+
+          <div className="relative h-40 overflow-hidden rounded-2xl shadow-lg sm:h-48">
             <Image
               src="/child.jpeg"
               alt="Child receiving healthcare"
@@ -51,19 +49,10 @@ export default function Welcome() {
             />
           </div>
 
-          <div className="relative w-full h-56 sm:h-64 rounded-xl overflow-hidden shadow-lg">
+          <div className="relative h-40 overflow-hidden rounded-2xl shadow-lg sm:h-48">
             <Image
-              src="/doctor.jpeg"
-              alt="Doctor consulting patient"
-              fill
-              className="object-cover transition-transform duration-300 hover:scale-105"
-            />
-          </div>
-
-          <div className="relative w-full h-64 sm:h-80 col-span-1 sm:col-span-2 rounded-xl overflow-hidden shadow-lg">
-            <Image
-              src="/sign.jpg"
-              alt="Clinic sign"
+              src="/labb.jpeg"
+              alt="Clinic laboratory"
               fill
               className="object-cover transition-transform duration-300 hover:scale-105"
             />

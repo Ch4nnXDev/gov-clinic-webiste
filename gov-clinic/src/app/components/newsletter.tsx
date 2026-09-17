@@ -1,16 +1,13 @@
 'use client';
 import {useGetArticles} from "@/hooks/getArticles";
-import Image from "next/image";
-
-import { Scrollbar, Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import Link from "next/link";
 
 type Article = {
   id: number;
   title: string;
   content: string;
   author: string;
-  readTime: string;
+  readtime: string;
 
 };
 
@@ -20,53 +17,7 @@ export default function Newsletter() {
   const { data } = useGetArticles();
   
   return (
-    <section className="flex flex-col min-h-screen p-18">
-      {/* Heading */}
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900">
-      
-        </h1>
-      </div>
-
-      <hr className="mt-6 border-gray-300" />
-
-      {/* Carousel */}
-      <div className="mt-10">
-        <Swiper
-          spaceBetween={30}
-          slidesPerView={1}
-          navigation
-          scrollbar={{ draggable: true }}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          modules={[Scrollbar, Navigation]}
-        >
-          {data?.articles?.map((article: Article) => (
-            <SwiperSlide key={article.id}>
-              <div className="bg-white rounded-xl shadow hover:shadow-md transition p-4">
-                <div className="relative w-full h-48">
-                  <Image
-                    src=""
-                    alt={article.title}
-                    fill
-                    className="object-cover rounded-lg"
-                   
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mt-4">
-                  
-                </h3>
-                <button className="mt-4 text-blue-600 hover:underline text-sm font-medium">
-                  Read More →
-                </button>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+    <section className="bg-sky-50 px-6 py-16"><div className="mx-auto max-w-6xl"><p className="eyebrow">Keep learning</p><h2 className="section-title">Latest from the knowledge centre</h2><div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{data?.articles?.slice(0, 3).map((article: Article) => <article key={article.id} className="rounded-2xl bg-white p-6 shadow-sm"><p className="text-xs font-bold uppercase tracking-wider text-sky-700">{article.readtime || "Health resource"}</p><h3 className="mt-3 text-lg font-bold text-slate-900">{article.title}</h3><p className="mt-3 line-clamp-3 text-sm leading-6 text-slate-600">{article.content}</p></article>)}</div><Link href="/knowledge-center" className="mt-8 inline-block font-semibold text-sky-700">Browse all articles →</Link></div>
     </section>
   );
 }

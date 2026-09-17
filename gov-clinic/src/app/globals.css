@@ -1,6 +1,7 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap');
-
-body {
-  font-family: 'Roboto', 'Open Sans', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+:root { --background: #f7f9fb; --foreground: #172b4d; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: "Inter", Arial, sans-serif; }
+main { min-height: 60vh; }.display { font-family: "Inter", Arial, sans-serif; }.eyebrow { color: #b42318; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }.section-title { margin-top: .5rem; font-family: "Inter", Arial, sans-serif; font-size: clamp(1.85rem, 4vw, 2.75rem); font-weight: 700; line-height: 1.2; color: #172b4d; }

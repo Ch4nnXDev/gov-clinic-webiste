@@ -1,10 +1,10 @@
 import axios from "axios";
 
-type Article = {
+export type ArticleInput = {
     author: string,
     title: string,
     content: string,
-    readTime: number
+    readTime: string
 }
 const API_URL = process.env.NEXT_PUBLIC_URL || "http://localhost:4000";
 
@@ -15,9 +15,9 @@ export const getAllArticles = async () => {
 }
 
 
-export const createArticle = async (data: Article) => {
-    const user = await axios.post(`${API_URL}/api/articles`, data);
-    return user;
+export const createArticle = async (data: ArticleInput) => {
+    const response = await axios.post(`${API_URL}/api/articles`, data);
+    return response.data;
     
 }
 

@@ -4,7 +4,8 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 export function useGetArticles() {
     return useQuery({
         queryKey: ["articles"],
-        queryFn: getAllArticles
+        queryFn: getAllArticles,
+        retry: 1
     })
 };
 

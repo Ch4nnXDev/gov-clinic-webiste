@@ -10,9 +10,9 @@ export default function ClinicDaysPage() {
   ];
 
   return (
-    <main className="w-full min-h-screen bg-gray-50">
+    <main className="bg-slate-50">
       {/* Hero Section */}
-      <section className="relative w-full h-80 md:h-[500px]">
+      <section className="relative h-80 w-full sm:h-[28rem]">
         <Image
           src="/pills.jpeg"
           alt=""
@@ -21,8 +21,8 @@ export default function ClinicDaysPage() {
           className="rounded-b-xl"
           priority
         />
-        <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-950/55 px-6 pt-16 text-center"><p className="eyebrow text-teal-200">Plan your visit</p>
+          <h1 className="display text-4xl font-bold text-white drop-shadow-lg sm:text-5xl">
             Clinic Days & Hours
           </h1>
           <p className="mt-2 text-white text-lg md:text-xl drop-shadow-md max-w-2xl">
@@ -32,32 +32,27 @@ export default function ClinicDaysPage() {
       </section>
 
       {/* Content Section */}
-      <section className="max-w-5xl mx-auto mt-16 bg-white rounded-xl shadow-lg p-8 md:p-12">
-        <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
+      <section className="mx-auto max-w-5xl px-6 py-16 sm:py-20"><div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 sm:p-10"><p className="text-base leading-7 text-slate-700 sm:text-lg">
           Please check our schedule below for the latest updates on clinic days and hours.  
           We strive to ensure that our services are accessible and timely for all patients.
         </p>
 
         {/* Schedule Table */}
-        <div className="mt-8 overflow-x-auto">
-          <table className="w-full text-left border-collapse">
+        <div className="mt-8 overflow-hidden rounded-xl border border-slate-200"><table className="w-full text-left border-collapse">
             <thead>
               <tr>
-                <th className="border-b border-gray-300 py-2 px-4 text-gray-800">Day</th>
-                <th className="border-b border-gray-300 py-2 px-4 text-gray-800">Opening Hours</th>
+                <th className="border-b border-slate-200 bg-slate-50 py-3 px-4 text-slate-800">Day</th><th className="border-b border-slate-200 bg-slate-50 py-3 px-4 text-slate-800">Opening Hours</th>
               </tr>
             </thead>
             <tbody>
               {schedule.map((item, index) => (
-                <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : ""}>
-                  <td className="py-2 px-4">{item.day}</td>
-                  <td className="py-2 px-4">{item.hours}</td>
+                <tr key={index} className={index % 2 === 0 ? "bg-teal-50/50" : ""}><td className="py-3 px-4 font-medium">{item.day}</td><td className="py-3 px-4">{item.hours}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-      </section>
+      </div></section>
     </main>
   );
 }

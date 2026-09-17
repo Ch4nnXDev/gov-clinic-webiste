@@ -1,32 +1,28 @@
 "use client";
 import { useGetArticles } from "@/hooks/getArticles";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { BookOpen, Clock3, Search } from "lucide-react";
+import { useState } from "react";
 
 
 
 export default function KnowledgeCenterPage() {
-  const { data } = useGetArticles();
+  const { data, isLoading, isError } = useGetArticles();
+  const [query, setQuery] = useState("");
 
   type Article = {
   id: number;
   title: string;
   content: string;
   author: string;
-  readTime: number;
+  readtime: string;
 
 };
 
-
-
-
-
-
-
   return (
-    <main className="w-full min-h-screen bg-gray-50">
+    <main className="bg-slate-50">
       {/* Hero Section */}
-      <section className="relative w-full h-80 md:h-[500px]">
+      <section className="relative h-80 w-full sm:h-[26rem]">
         <Image
           src="/child.jpeg"
           alt="Knowledge Center"
@@ -35,8 +31,8 @@ export default function KnowledgeCenterPage() {
           className="rounded-b-xl"
           priority
         />
-        <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-950/55 px-6 pt-16 text-center">
+          <p className="eyebrow text-sky-200">Learn with confidence</p><h1 className="display text-4xl font-bold text-white drop-shadow-lg sm:text-5xl">
             Knowledge Center
           </h1>
           <p className="mt-2 text-white text-lg md:text-xl drop-shadow-md max-w-2xl">
@@ -46,41 +42,29 @@ export default function KnowledgeCenterPage() {
       </section>
 
       {/* Content */}
-      <section className="max-w-7xl mx-auto px-6 md:px-0 mt-16 space-y-12">
+      <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
         {/* Search */}
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-            Featured Articles
-          </h2>
-        <div className="bg-white p-3 rounded-xl shadow-md max-w-lg mx-auto">
-          
+          <h2 className="section-title text-center">Featured articles</h2>
+        <div className="relative mx-auto mt-8 max-w-xl"><Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
           <input
             type="text"
-            placeholder="Search articles, resources, or FAQs..."
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search articles and resources..."
+            className="w-full rounded-xl border border-slate-200 bg-white py-4 pl-12 pr-4 shadow-sm outline-none focus:border-sky-500 focus:ring-4 focus:ring-sky-100"
           />
         </div>
 
         {/* Articles */}
-        <div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {data?.articles?.map((article: Article) => (
-              <motion.div
+        <div className="mt-10">{isLoading && <p className="text-center text-slate-500">Loading resources…</p>}{isError && <p className="rounded-xl bg-amber-50 p-4 text-center text-amber-800">Resources are currently unavailable.</p>}
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {data?.articles?.filter((article: Article) => `${article.title} ${article.content}`.toLowerCase().includes(query.toLowerCase())).map((article: Article) => (
+              <article
                 key={article.id}
-                layout
-                initial="collapsed"
-                className="bg-white p-10 rounded-xl shadow-md hover:shadow-lg transition flex flex-col justify-between"
+                className="flex min-h-64 flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{article.title}</h3>
-                <p className={`text-gray-600 `}>
+                <div><BookOpen className="h-7 w-7 text-sky-700" /><h3 className="mt-5 text-xl font-semibold text-slate-900">{article.title}</h3><p className="mt-3 line-clamp-4 text-sm leading-6 text-slate-600">
                   {article.content}
-                </p>
-                <button
-                  
-                  className="mt-3 self-start bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition"
-                >
-                </button>
-              </motion.div>
+                </p></div><p className="mt-5 flex items-center gap-1 text-xs font-medium text-slate-500"><Clock3 className="h-3.5 w-3.5" />{article.readtime || "5 min read"}</p>
+              </article>
             ))}
           </div>
         </div>

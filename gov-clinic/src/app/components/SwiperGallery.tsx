@@ -13,23 +13,23 @@ export default function SwiperGallery() {
   const slides = [
     {
       img: "/pills.jpeg",
-      title: "Comprehensive Healthcare Services",
-      subtitle: "Providing essential medicines and care to the community."
+      title: "Your health matters here",
+      subtitle: "Confidential, compassionate sexual health care in Anuradhapura."
     },
     {
       img: "/child.jpeg",
-      title: "Laboratory Services",
-      subtitle: "Ensuring healthy growth and wellness for children and families."
+      title: "Knowledge makes a difference",
+      subtitle: "Clear answers, practical support and care without judgement."
     },
     {
       img: "/old.jpeg",
-      title: "Training & Information Sessions",
-      subtitle: "Tailored healthcare programs for senior citizens."
+      title: "A healthier tomorrow, together",
+      subtitle: "Supporting people, families and communities with trusted care."
     }
   ];
 
   return (
-    <div className="w-full h-[60vh] sm:h-[70vh] md:h-[85vh] lg:h-screen relative">
+    <section className="relative h-[34rem] w-full sm:h-[38rem] lg:h-[44rem]">
       <Swiper
         spaceBetween={0}
         effect="fade"
@@ -53,10 +53,10 @@ export default function SwiperGallery() {
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center px-4 sm:px-8">
-                <h2 className="text-white text-2xl sm:text-3xl md:text-5xl font-bold leading-snug drop-shadow-lg">
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-950/50 px-6 pt-16 text-center sm:px-8">
+                <p className="mb-4 text-xs font-bold uppercase tracking-[.2em] text-red-200">Sexual Health Centre</p><h1 className="display max-w-4xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
                   {slide.title}
-                </h2>
+                </h1>
                 <p className="mt-3 text-white text-sm sm:text-base md:text-xl max-w-2xl drop-shadow-md">
                   {slide.subtitle}
                 </p>
@@ -65,6 +65,6 @@ export default function SwiperGallery() {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </section>
   );
 }
