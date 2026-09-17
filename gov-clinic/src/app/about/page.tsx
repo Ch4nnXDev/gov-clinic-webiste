@@ -25,7 +25,7 @@ export default function AboutPage() {
       <section className="mx-auto max-w-5xl px-6 py-16 sm:py-20"><div className="grid gap-8 rounded-2xl bg-white p-7 shadow-sm ring-1 ring-slate-200 md:grid-cols-[1fr_.8fr] md:p-12">
         <div className="space-y-6">
           <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
-            Welcome to the Anuradhapura HIV Clinic. We are dedicated to providing
+            Welcome to the Sexual Health Centre Anuradhapura. We are dedicated to providing
             comprehensive care and support for individuals living with HIV.
             Our clinic is committed to improving the health and well-being of our
             patients through a wide range of services, including medical treatment,
