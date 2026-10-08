@@ -1,7 +1,99 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-const links = [{ href: "/", label: "Home" }, { href: "/about", label: "About" }, { href: "/services", label: "Services" }, { href: "/knowledge-center", label: "Knowledge" }, { href: "/clinic-days", label: "Clinic hours" }];
-export default function NavBar() { const [open, setOpen] = useState(false); return <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6"><nav className="mx-auto max-w-6xl rounded-xl border border-slate-200 bg-white/95 px-4 py-3 shadow-md shadow-slate-900/10 backdrop-blur md:px-6"><div className="flex items-center justify-between gap-4"><Link href="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}><Image src="/Logo.png" alt="Sexual Health Centre Anuradhapura" width={44} height={44} className="h-10 w-10 object-contain" priority /><span className="text-sm font-bold leading-tight text-slate-800 sm:text-base">Sexual Health Centre<br className="sm:hidden" /> Anuradhapura</span></Link><div className="hidden items-center gap-1 lg:flex">{links.map((link) => <Link key={link.href} href={link.href} className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-teal-50 hover:text-teal-800">{link.label}</Link>)}<a href="https://www.know4sure.lk" target="_blank" rel="noreferrer" className="ml-2 rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-teal-800">Get support</a></div><button type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen(!open)} className="rounded-lg p-2 text-slate-700 hover:bg-slate-100 lg:hidden">{open ? <X /> : <Menu />}</button></div>{open && <div className="mt-3 grid border-t border-slate-100 pt-3 lg:hidden">{links.map((link) => <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-slate-700 hover:bg-teal-50">{link.label}</Link>)}<a href="https://www.know4sure.lk" className="mt-2 rounded-lg bg-teal-700 px-3 py-3 text-center text-sm font-semibold text-white">Get support</a></div>}</nav></header>; }
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/knowledge-center", label: "Knowledge" },
+  { href: "/clinic-days", label: "Clinic hours" },
+];
+
+export default function NavBar() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6">
+      <nav className="mx-auto max-w-6xl rounded-xl border border-slate-200 bg-white/95 px-4 py-3 shadow-md shadow-slate-900/10 backdrop-blur md:px-6">
+        <div className="flex items-center justify-between gap-4">
+          <Link
+            href="/"
+            className="flex min-w-0 items-center gap-3"
+            onClick={() => setOpen(false)}
+          >
+            <Image
+              src="/Logo.png"
+              alt="Sexual Health Centre Anuradhapura"
+              width={44}
+              height={44}
+              className="h-10 w-10 object-contain"
+              priority
+            />
+
+            <span className="text-sm font-bold leading-tight text-slate-800 sm:text-base">
+              Sexual Health Centre
+              <br className="sm:hidden" /> Anuradhapura
+            </span>
+          </Link>
+
+          <div className="hidden items-center gap-1 lg:flex">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-teal-50 hover:text-teal-800"
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            <a
+              href="https://www.know4sure.lk"
+              target="_blank"
+              rel="noreferrer"
+              className="ml-2 rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-teal-800"
+            >
+              Get support
+            </a>
+          </div>
+
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen(!open)}
+            className="rounded-lg p-2 text-slate-700 hover:bg-slate-100 lg:hidden"
+          >
+            {open ? <X /> : <Menu />}
+          </button>
+        </div>
+
+        {open && (
+          <div className="mt-3 grid border-t border-slate-100 pt-3 lg:hidden">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="rounded-lg px-3 py-3 text-sm font-medium text-slate-700 hover:bg-teal-50"
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            <a
+              href="https://www.know4sure.lk"
+              className="mt-2 rounded-lg bg-teal-700 px-3 py-3 text-center text-sm font-semibold text-white"
+            >
+              Get support
+            </a>
+          </div>
+        )}
+      </nav>
+    </header>
+  );
+}

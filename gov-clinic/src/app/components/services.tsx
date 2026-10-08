@@ -1,4 +1,75 @@
 import Link from "next/link";
-import { HeartPulse, MessageCircleHeart, Microscope, Users } from "lucide-react";
-const services = [{ icon: HeartPulse, title: "HIV care", text: "Personalised treatment, follow-up and ongoing clinical care." }, { icon: Microscope, title: "Testing & screening", text: "Confidential testing and clear guidance about your results." }, { icon: MessageCircleHeart, title: "Counselling", text: "A safe space for questions, emotional support and informed choices." }, { icon: Users, title: "Community support", text: "Education and services that help people feel less alone." }];
-export default function Services() { return <section className="bg-red-50/70 py-16 sm:py-20"><div className="mx-auto max-w-6xl px-6"><div className="max-w-2xl"><p className="eyebrow">How we can help</p><h2 className="section-title">Care built around people</h2><p className="mt-4 text-slate-600">From clinical services to trusted information, our team is here to support your wellbeing.</p></div><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{services.map(({ icon: Icon, title, text }) => <article key={title} className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200"><Icon className="h-8 w-8 text-red-700" /><h3 className="mt-5 text-lg font-bold text-slate-900">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{text}</p></article>)}</div><Link href="/services" className="mt-8 inline-block font-semibold text-red-700 hover:text-red-900">Explore all services →</Link></div></section>; }
+import {
+  HeartPulse,
+  MessageCircleHeart,
+  Microscope,
+  Users,
+} from "lucide-react";
+
+const services = [
+  {
+    icon: HeartPulse,
+    title: "HIV care",
+    text: "Personalised treatment, follow-up and ongoing clinical care.",
+  },
+  {
+    icon: Microscope,
+    title: "Testing & screening",
+    text: "Confidential testing and clear guidance about your results.",
+  },
+  {
+    icon: MessageCircleHeart,
+    title: "Counselling",
+    text: "A safe space for questions, emotional support and informed choices.",
+  },
+  {
+    icon: Users,
+    title: "Community support",
+    text: "Education and services that help people feel less alone.",
+  },
+];
+
+export default function Services() {
+  return (
+    <section className="bg-red-50/70 py-16 sm:py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="max-w-2xl">
+          <p className="eyebrow">How we can help</p>
+
+          <h2 className="section-title">Care built around people</h2>
+
+          <p className="mt-4 text-slate-600">
+            From clinical services to trusted information, our team is here to
+            support your wellbeing.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map(({ icon: Icon, title, text }) => (
+            <article
+              key={title}
+              className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200"
+            >
+              <Icon className="h-8 w-8 text-red-700" />
+
+              <h3 className="mt-5 text-lg font-bold text-slate-900">
+                {title}
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                {text}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        <Link
+          href="/services"
+          className="mt-8 inline-block font-semibold text-red-700 hover:text-red-900"
+        >
+          Explore all services →
+        </Link>
+      </div>
+    </section>
+  );
+}
